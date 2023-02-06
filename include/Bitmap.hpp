@@ -1,0 +1,7 @@
+class Bitmap
+{
+public:
+
+private:
+
+};

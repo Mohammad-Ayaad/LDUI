@@ -1,0 +1,47 @@
+{
+	"folders":
+	[
+		{
+			"path":"sublime text/../../.."
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name":"Build Debug",
+			"working_dir":"${project_path}",
+			"cmd":[
+				"rm -f *.o && cp -R res bin/debug && g++ -c src/*.cpp -std=c++14 -m64 -g -Wall -I include && g++ *.o -o bin/debug/main -lSDL2main -lSDL2 -lSDL2_image && ./bin/debug/main"
+			],
+			"selector":"source.c++",
+			"shell":true
+		},
+		{
+			"name":"Build Release",
+			"working_dir":"${project_path}",
+			"cmd":[
+				"rm -f *.o && cp -R res bin/release && g++ -c src/*.cpp -std=c++14 -m64 -O3 -Wall -I include && g++ *.o -o bin/release/main -s -lSDL2main -lSDL2 -lSDL2_image && ./bin/release/main"
+			],
+			"selector":"source.c++",
+			"shell":true
+		},
+		{
+			"name":"Build Release (i686 win32)",
+			"working_dir":"${project_path}",
+			"cmd":[
+				"rm -f *.o && cp -R res bin/windows/x86/release && i686-w64-mingw32-g++-win32 -c src/*.cpp -std=c++14 -m64 -O3 -Wall -I include -I dep/SDL2-2.26.2/i686-w64-mingw32/include -I dep/SDL2-2.26.2/i686-w64-mingw32/include/SDL2 -I dep/SDL2_image-2.6.2/i686-w64-mingw32/include && i686-w64-mingw32-g++-win32 *.o -o bin/windows/x86/release/main.exe -L dep/SDL2-2.26.2/i686-w64-mingw32/lib -L dep/SDL2_image-2.6.2/i686-w64-mingw32/lib -s -lmingw32 -lSDL2main -lSDL2 -lSDL2_image"
+			],
+			"selector":"source.c++",
+			"shell":true
+		},
+		{
+			"name":"Build Release (x86_64 win32)",
+			"working_dir":"${project_path}",
+			"cmd":[
+				"rm -f *.o && cp -R res bin/windows/x64/release && x86_64-w64-mingw32-g++-win32 -c src/*.cpp -std=c++14 -m64 -O3 -Wall -I include -I dep/SDL2-2.26.2/x86_64-w64-mingw32/include -I dep/SDL2-2.26.2/x86_64-w64-mingw32/include/SDL2 -I dep/SDL2_image-2.6.2/x86_64-w64-mingw32/include && x86_64-w64-mingw32-g++-win32 *.o -o bin/windows/x64/release/main.exe -L dep/SDL2-2.26.2/x86_64-w64-mingw32/lib -L dep/SDL2_image-2.6.2/x86_64-w64-mingw32/lib -s -lmingw32 -lSDL2main -lSDL2 -lSDL2_image"
+			],
+			"selector":"source.c++",
+			"shell":true
+		}
+	]
+}
