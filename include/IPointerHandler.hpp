@@ -1,8 +1,8 @@
+template<typename PointT,typename KeyT>
 class IPointerHandler
 {
 public:
-	virtual void Input() = 0; //in a mouse => onClick
-	virtual void InputHold() = 0;//in a mouse => onButtonDown
-	virtual void InputRelease() = 0;//in a mouse => onButtonUp
-
+	virtual void InputClick(PointT location,KeyT code) = 0; //in a mouse => onClick
+	virtual void InputPressed(PointT location,KeyT code) = 0;//in a mouse => onButtonDown
+	virtual void InputReleased(PointT location,KeyT code) = 0;//in a mouse => onButtonUp
 };
