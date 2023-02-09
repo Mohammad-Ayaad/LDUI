@@ -1,3 +1,5 @@
+#include <math.h>
+
 template<typename componentT>
 class vector2
 {
@@ -51,10 +53,9 @@ public:
     static vector2 max_l(vector2& a,vector2& b);
     componentT length(vector2& b);
     void length_c_eq(vector2& b);
-    void length_l_eq(vector2& b);
     static componentT length(vector2& a,vector2& b);
     componentT det();
-    componentT det_c_eq();
+    void det_c_eq();
     static componentT det(vector2& a);
     vector2 normal();
     static vector2 normal(vector2& a);
@@ -62,9 +63,6 @@ public:
     componentT dot(vector2& b);
     void dot_c_eq(vector2& b);
     static componentT dot(vector2& a,vector2& b);
-    vector2 cross(vector2& b);
-    vector2 cross_eq(vector2& b);
-    static vector2 cross(vector2& a,vector2& b);
     void operator=(vector2& a);
     bool equals(vector2& b);
     static bool equals(vector2& a,vector2& b);
@@ -94,7 +92,6 @@ public:
     void operator/=(componentT b);
     componentT length(componentT b);
     void length_c_eq(componentT b);
-    void length_l_eq(componentT b);
     void operator=(componentT& a);
     bool equals(componentT b);
     static bool equals(vector2& a,componentT b);
@@ -113,6 +110,6 @@ public:
     bool isSmallerThanOrEqual_l(vector2& b);
     bool operator<=(vector2& b);
     static bool isSmallerThanOrEqual_l(vector2& a,vector2& b);
-
+    
     
 };
